@@ -27,7 +27,7 @@ const contextValues = {
       ],
     },
   ],
-  currentPage: 1,
+  currentQuestion: 1,
   setIsQuestionAnsweredCorrectly: jest.fn(),
 };
 
@@ -48,7 +48,7 @@ describe("Quiz component", () => {
   it("renders correct question text", () => {
     const component = findByTestAttr(wrapper, "quiz-question");
     expect(component.text()).toBe(
-      contextValues.questions[contextValues.currentPage].text
+      contextValues.questions[contextValues.currentQuestion].text
     );
   });
 

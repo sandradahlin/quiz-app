@@ -8,7 +8,7 @@ const currentState = {
   error: false,
   initialTimer: 15000,
   timer: 15000,
-  currentPage: 0,
+  currentQuestion: 0,
   showStatistics: false,
   score: 0,
   numberOfIncorrectAnswers: 0,
@@ -45,7 +45,9 @@ describe("Reducer", () => {
       type: actions.SWITCH_QUESTION,
     });
 
-    expect(newState.currentPage).toBeGreaterThan(currentState.currentPage);
+    expect(newState.currentQuestion).toBeGreaterThan(
+      currentState.currentQuestion
+    );
     expect(newState.timer && newState.initialTimer).toEqual(currentState.timer);
     expect(newState.isQuestionAnsweredCorrectly).toEqual("unanswered");
   });
@@ -156,7 +158,7 @@ describe("Reducer", () => {
           ],
         },
       ],
-      currentPage: 1,
+      currentQuestion: 1,
       helpRemoveAnswersUsed: false,
     };
 
@@ -168,10 +170,11 @@ describe("Reducer", () => {
     expect(newState.helpRemoveAnswersUsed).toEqual(true);
     expect(newState.questions).not.toBeUndefined();
     expect(
-      newState.questions[currentstateWithQuestions.currentPage].answers.length
+      newState.questions[currentstateWithQuestions.currentQuestion].answers
+        .length
     ).toBe(2);
     expect(
-      newState.questions[currentstateWithQuestions.currentPage].answers
+      newState.questions[currentstateWithQuestions.currentQuestion].answers
     ).toContainEqual({ answer: "answer 1", correct: true });
     expect(newState.questions.length).toEqual(
       currentstateWithQuestions.questions.length

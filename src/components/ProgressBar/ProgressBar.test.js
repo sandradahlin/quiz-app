@@ -8,7 +8,7 @@ describe("ProgressBar Component", () => {
   let wrapper;
   const contextValues = {
     questions: [{ text: "question1" }],
-    currentPage: 1,
+    currentQuestion: 1,
   };
 
   beforeEach(() => {
@@ -23,7 +23,7 @@ describe("ProgressBar Component", () => {
     const heading = findByTestAttr(wrapper, "progressbar-heading");
     expect(heading.length).toBe(1);
     expect(heading.text()).toEqual(
-      `Question ${contextValues.currentPage + 1} Of ${
+      `Question ${contextValues.currentQuestion + 1} Of ${
         contextValues.questions.length
       }`
     );

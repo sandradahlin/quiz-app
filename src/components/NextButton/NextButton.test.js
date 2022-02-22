@@ -19,7 +19,7 @@ describe("NextButton Component", () => {
       { text: "question2" },
       { text: "question3" },
     ],
-    currentPage: 1,
+    currentQuestion: 1,
     isQuestionAnsweredCorrectly: "",
     addToStatistics: jest.fn(),
     switchQuestion: jest.fn().mockReturnValue(4),

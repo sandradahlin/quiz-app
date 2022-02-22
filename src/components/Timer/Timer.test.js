@@ -8,7 +8,7 @@ const initialState = {
   questions: [],
   initialTimer: 15000,
   timer: 15000,
-  currentPage: 0,
+  currentQuestion: 0,
   showStatistics: false,
   isQuestionAnsweredCorrectly: "unanswered",
 };
